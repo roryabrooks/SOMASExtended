@@ -70,17 +70,18 @@ func (t *Team1AoA) GetExpectedWithdrawal(agentId uuid.UUID, agentScore int, comm
 	return expectedWithdrawal
 }
 
+// Getter
 func (t *Team6AoA) GetContributionAuditResult(agentId uuid.UUID) bool {
 	// true if successful audit, false if no
 	return t.auditResult[agentId].Back().Value.(int) == 1
 }
 
+// Setter
 func (t *Team6AoA) SetContributionAuditResult(agentId uuid.UUID, agentScore int, agentActualContribution int, agentStatedContribution int) {
 
 	// if the agent is giving less than they say
 	if agentStatedContribution > agentActualContribution{
 
-		if agentActualContribution < t.
 		t.auditResult[agentId].PushBack(true)
 
 		// now that the audit is successful
